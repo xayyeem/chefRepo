@@ -8,8 +8,7 @@
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
-    "build": "parcel build"
-  },
+    "build": "parcel build index.html"  },
   "dependencies": {
     "ansi-styles": "^4.3.0",
     "base-x": "^3.0.11",
