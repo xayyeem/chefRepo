@@ -1,0 +1,663 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 40px;
+
+    background-color: #fff;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav-items ul {
+    display: flex;
+    align-items: center;
+
+    gap: 32px;
+
+    list-style: none;
+}
+
+.nav-items li {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* React Router Links */
+
+.nav-items a {
+    text-decoration: none;
+    color: #222;
+
+    transition: color 0.2s ease;
+}
+
+.nav-items a:hover {
+    color: #ff5200;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-btn {
+    padding: 9px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #ff5200;
+    color: #fff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.login-btn:hover {
+    background-color: #e64600;
+
+    transform: translateY(-1px);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+.body {
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 30px 40px;
+}
+
+
+/* =========================
+   SEARCH + FILTER
+========================= */
+
+.filter {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search {
+    display: flex;
+    align-items: center;
+
+    width: 420px;
+    height: 46px;
+
+    background-color: #fff;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    transition: all 0.2s ease;
+}
+
+
+/* When input is focused */
+
+.search:focus-within {
+    border-color: #ff5200;
+
+    box-shadow: 0 0 0 3px rgba(255, 82, 0, 0.1);
+}
+
+
+/* Input */
+
+.search-box {
+    flex: 1;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0 15px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 15px;
+    color: #222;
+}
+
+.search-box::placeholder {
+    color: #999;
+}
+
+
+/* Search button */
+
+.search button {
+    height: 100%;
+
+    padding: 0 22px;
+
+    border: none;
+
+    background-color: #ff5200;
+    color: #fff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.search button:hover {
+    background-color: #e64600;
+}
+
+
+/* =========================
+   TOP RATED BUTTON
+========================= */
+
+.filter-btn {
+    height: 46px;
+
+    padding: 0 18px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    background-color: #fff;
+    color: #222;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    background-color: #ff5200;
+    color: #fff;
+
+    border-color: #ff5200;
+}
+
+
+/* =========================
+   RESTAURANT CONTAINER
+========================= */
+
+.res-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+/* =========================
+   RESTAURANT CARD
+========================= */
+
+.res-card {
+    width: 100%;
+
+    background-color: #fff;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.res-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================
+   RESTAURANT IMAGE
+========================= */
+
+.res-image {
+    width: 100%;
+    height: 190px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   RESTAURANT CONTENT
+========================= */
+
+.res-content {
+    padding: 14px;
+}
+
+.res-content h3 {
+    font-size: 19px;
+
+    line-height: 1.3;
+
+    color: #222;
+
+    margin-bottom: 8px;
+
+    /* Show maximum 2 lines */
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+
+    min-height: 49px;
+}
+
+.res-content p {
+    font-size: 14px;
+
+    color: #666;
+
+    margin: 6px 0;
+
+    line-height: 1.4;
+}
+
+.res-content p:nth-child(2) {
+    font-weight: 600;
+
+    color: #1ba672;
+}
+
+
+/* =========================
+   SHIMMER
+========================= */
+
+.shimmer-container {
+    max-width: 1400px;
+
+    margin: 30px auto;
+
+    padding: 0 40px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+.shimmer-card {
+    background-color: #fff;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+.shimmer-image {
+    width: 100%;
+    height: 190px;
+}
+
+.shimmer-line {
+    height: 14px;
+
+    margin: 12px;
+
+    border-radius: 6px;
+}
+
+.shimmer-title {
+    width: 70%;
+}
+
+.shimmer-rating {
+    width: 35%;
+}
+
+.shimmer-cuisine {
+    width: 85%;
+}
+
+.shimmer-price {
+    width: 55%;
+}
+
+
+/* Shimmer animation */
+
+.shimmer-image,
+.shimmer-line {
+    background: linear-gradient(
+        90deg,
+        #eeeeee 25%,
+        #dddddd 50%,
+        #eeeeee 75%
+    );
+
+    background-size: 200% 100%;
+
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+
+/* =========================
+   ERROR PAGE
+========================= */
+
+.error-page {
+    min-height: calc(100vh - 95px);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+.error-content {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 50px 40px;
+
+    text-align: center;
+
+    background-color: #fff;
+
+    border-radius: 16px;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.error-icon {
+    width: 90px;
+    height: 90px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background-color: #fff1eb;
+
+    font-size: 45px;
+}
+
+.error-content h1 {
+    margin-bottom: 8px;
+
+    color: #222;
+
+    font-size: 42px;
+}
+
+.error-content h2 {
+    margin-bottom: 12px;
+
+    font-size: 22px;
+}
+
+.error-content p {
+    margin: 0 auto 28px;
+
+    max-width: 400px;
+
+    color: #666;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+.error-home-btn {
+    padding: 12px 28px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #ff5200;
+
+    color: #fff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.error-home-btn:hover {
+    background-color: #e64600;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVE - TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+    .res-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .shimmer-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================
+   RESPONSIVE - SMALL TABLET
+========================= */
+
+@media (max-width: 800px) {
+
+    .header {
+        padding: 12px 20px;
+    }
+
+    .nav-items ul {
+        gap: 15px;
+    }
+
+    .body {
+        padding: 25px 20px;
+    }
+
+    .filter {
+        flex-wrap: wrap;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .res-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .shimmer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        padding: 0 20px;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 550px) {
+
+    .header {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .nav-items ul {
+        gap: 10px;
+    }
+
+    .nav-items li {
+        font-size: 14px;
+    }
+
+    .nav-items li:nth-child(2),
+    .nav-items li:nth-child(3) {
+        display: none;
+    }
+
+    .body {
+        padding: 20px 15px;
+    }
+
+    .filter {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+
+    .res-container {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .shimmer-container {
+        grid-template-columns: 1fr;
+
+        padding: 0 15px;
+    }
+
+    .res-image,
+    .shimmer-image {
+        height: 210px;
+    }
+
+    .error-content {
+        padding: 40px 20px;
+    }
+}
