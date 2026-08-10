@@ -2,7 +2,7 @@ import { LOGO_URL } from "../Utils/constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
-import "../css/header.css";
+import "../css/Header.css";
 
 const HeaderComponent = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
