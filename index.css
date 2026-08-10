@@ -661,3 +661,290 @@ body {
         padding: 40px 20px;
     }
 }
+
+/* =========================
+   OFFLINE PAGE
+========================= */
+
+.offline-page {
+    min-height: calc(100vh - 95px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fff4ef 0%,
+            #f5f5f5 45%,
+            #f5f5f5 100%
+        );
+}
+
+.offline-card {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 55px 40px;
+
+    text-align: center;
+
+    background-color: #fff;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.08);
+
+    animation: offlineCardAppear 0.4s ease-out;
+}
+
+/* =========================
+   OFFLINE ICON
+========================= */
+
+.offline-icon {
+    width: 100px;
+    height: 100px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #fff1eb;
+
+    font-size: 48px;
+
+    box-shadow:
+        0 0 0 10px #fff8f5;
+
+    animation: offlinePulse 2s infinite;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.offline-card h1 {
+    margin-bottom: 12px;
+
+    color: #222;
+
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.offline-card p {
+    max-width: 380px;
+
+    margin: 0 auto 28px;
+
+    color: #666;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* =========================
+   RETRY BUTTON
+========================= */
+
+.offline-retry-btn {
+    padding: 12px 30px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #ff5200;
+
+    color: #fff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.offline-retry-btn:hover {
+    background-color: #e64600;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(255, 82, 0, 0.25);
+}
+
+.offline-retry-btn:active {
+    transform: translateY(0);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes offlineCardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes offlinePulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 550px) {
+
+    .offline-page {
+        min-height: calc(100vh - 75px);
+
+        padding: 25px 15px;
+    }
+
+    .offline-card {
+        padding: 45px 25px;
+
+        border-radius: 16px;
+    }
+
+    .offline-icon {
+        width: 85px;
+        height: 85px;
+
+        font-size: 40px;
+    }
+
+    .offline-card h1 {
+        font-size: 27px;
+    }
+
+    .offline-card p {
+        font-size: 14px;
+    }
+
+    .offline-retry-btn {
+        width: 100%;
+    }
+}
+
+/* =========================
+   CONNECTION STATUS
+========================= */
+
+.connection-status {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+/* Status dot */
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+/* Online */
+
+.connection-status.online {
+    background-color: #eafaf2;
+    color: #16834d;
+}
+
+.connection-status.online .status-dot {
+    background-color: #20b26b;
+
+    box-shadow: 0 0 0 4px rgba(32, 178, 107, 0.12);
+
+    animation: onlinePulse 2s infinite;
+}
+
+/* Offline */
+
+.connection-status.offline {
+    background-color: #fff1f1;
+    color: #d93025;
+}
+
+.connection-status.offline .status-dot {
+    background-color: #e53935;
+
+    box-shadow: 0 0 0 4px rgba(229, 57, 53, 0.10);
+}
+
+/* Animation */
+
+@keyframes onlinePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(32, 178, 107, 0.35);
+    }
+
+    70% {
+        box-shadow: 0 0 0 6px rgba(32, 178, 107, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(32, 178, 107, 0);
+    }
+}
+
+@media (max-width: 550px) {
+    .connection-status {
+        padding: 5px 8px;
+        font-size: 11px;
+        gap: 5px;
+    }
+
+    .status-dot {
+        width: 7px;
+        height: 7px;
+    }
+}

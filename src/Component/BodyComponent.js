@@ -1,12 +1,15 @@
 
 import RestaurantCard from './RestaurantCard';
 import { useEffect, useState } from 'react';
+import useOnlineStatus from '../Utils/useOnlineStatus';
 import Shimmer from './Shimmer';
+import '../../index.css'
 
 const BodyComponent = () => {
     const [restaurants, setRestaurants] = useState([]);
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
     const[searchText, setSearchText] = useState("");
+    const onlineStatus = useOnlineStatus();
 
     const filterTopRated = () => {
         const filteredData = restaurants.filter(
@@ -42,6 +45,31 @@ const BodyComponent = () => {
     if(restaurants.length === 0){
         return <Shimmer/>
     }
+    if (!onlineStatus) {
+    return (
+        <div className="offline-page">
+            <div className="offline-card">
+                <div className="offline-icon">
+                    📡
+                </div>
+
+                <h1>You're offline</h1>
+
+                <p>
+                    Looks like your internet connection is unavailable.
+                    Please check your connection and try again.
+                </p>
+
+                <button
+                    className="offline-retry-btn"
+                    onClick={() => window.location.reload()}
+                >
+                    Try Again
+                </button>
+            </div>
+        </div>
+    );
+}
 
     return(
         <div className='body'>

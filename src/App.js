@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import "../index.css";
 import HeaderComponent from './Component/HeaderComponent'
@@ -8,6 +8,7 @@ import AboutComponent from './Component/AboutComponent';
 import ContactComponent from './Component/ContactComponent';
 import ErrorComponent from './Component/ErrorComponent';
 import RestaurantMenuComponent from './Component/RestaurantMenuComponent';
+// import GroceceryComponent from './Component/GrocceryComponent';
 // react element=> object when we render it on dom it become html element
 // jsx => convention that merge html and js together
 // not html  in js, it is html like syntax that is used to create react element
@@ -43,7 +44,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
  *  - Copyright
  */
 
-
+const Grocery = lazy(()=>{
+    return import('./Component/GrocceryComponent')
+})
 const AppLayout = ()=>{
     return (
         <div className="app">
@@ -73,6 +76,13 @@ const appRouter = createBrowserRouter([
     {
         path:"/contact",
         element:<ContactComponent/>
+    },
+    {
+        path:"/grocery",
+        element:
+        <Suspense fallback={<h1>Loading...</h1>}>
+            <Grocery/>
+        </Suspense>
     }
 
         ],

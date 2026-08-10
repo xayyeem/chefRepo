@@ -2,26 +2,24 @@ import { useEffect } from "react";
 
 const RestaurantMenuComponent = () => {
 
-    const fetchMenuData = async () => {
-        try {
-            const swiggyUrl = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=30.33880&lng=76.39060&restaurantId=364440&catalog_qa=undefined&submitAction=ENTER";
+   const fetchMenuData = async () => {
+    try {
+        const url =
+            "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=30.33880&lng=76.39060&restaurantId=302706&catalog_qa=undefined&submitAction=ENTER";
 
-            const data = await fetch(`https://corsproxy.io/?url=${encodeURIComponent(swiggyUrl)}`);
+        const response = await fetch(url);
 
-            const text = await data.text();
+        // Wait 2 seconds after response arrives
+        await new Promise(resolve => setTimeout(resolve, 2000));
 
-            if (!text || text.trim() === "") {
-                console.error("Empty response — Swiggy blocked the request");
-                return;
-            }
+        const data = await response.json();
 
-            const json = JSON.parse(text);
-            console.log("Menu:", json);
+        console.log("Menu data:", data);
 
-        } catch (error) {
-            console.error("Error:", error);
-        }
-    };
+    } catch (error) {
+        console.error("Error:", error);
+    }
+};
 
     useEffect(() => {
         fetchMenuData();
