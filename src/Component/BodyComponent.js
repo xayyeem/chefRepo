@@ -29,9 +29,12 @@ const BodyComponent = () => {
 
             const swiggyUrl =
                 'https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.33880&lng=76.39060&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING';
-const API_KEY = "4277810b"
-            const proxyUrl =
+const API_KEY = "4277810b";
+
+const proxyUrl =
     `https://corsproxy.io/?key=${API_KEY}&url=${encodeURIComponent(swiggyUrl)}`;
+
+// console.log("Proxy URL:", proxyUrl);
 
             const response = await fetch(proxyUrl);
 

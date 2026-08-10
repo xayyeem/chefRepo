@@ -891,7 +891,7 @@ $RefreshReg$(_c1, "AppLayout");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-dom/client":"hrvwu","../index.css":"giGSC","./Component/HeaderComponent":"k4Akg","./Component/BodyComponent":"8IBIN","react-router-dom":"61z4w","./Component/AboutComponent":"5a411","./Component/ContactComponent":"efspw","./Component/ErrorComponent":"iDAiZ","./Component/RestaurantMenuComponent":"bnVp6","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","fa0bbef3ee4e8527":"bz0fH"}],"dVPUn":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-dom/client":"hrvwu","../index.css":"giGSC","./Component/HeaderComponent":"k4Akg","./Component/BodyComponent":"8IBIN","react-router-dom":"61z4w","./Component/AboutComponent":"5a411","./Component/ContactComponent":"efspw","./Component/ErrorComponent":"iDAiZ","./Component/RestaurantMenuComponent":"bnVp6","fa0bbef3ee4e8527":"bz0fH","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"dVPUn":[function(require,module,exports,__globalThis) {
 'use strict';
 module.exports = require("ee51401569654d91");
 
@@ -17740,7 +17740,7 @@ $RefreshReg$(_c, "HeaderComponent");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","../Utils/constants":"jAHEq","react":"jMk1U","react-router-dom":"61z4w","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","../Utils/useOnlineStatus":"4weZe"}],"jAHEq":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","../Utils/constants":"jAHEq","react":"jMk1U","react-router-dom":"61z4w","../Utils/useOnlineStatus":"4weZe","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"jAHEq":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "CDN_URL", ()=>CDN_URL);
@@ -25035,7 +25035,47 @@ function persistAppliedTransitions(_window, transitions) {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"7h6Pi":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"4weZe":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$b942 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$b942.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b942.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _s = $RefreshSig$();
+const useOnlineStatus = ()=>{
+    _s();
+    const [onlineStatus, setOnlineStatus] = (0, _react.useState)(true);
+    (0, _react.useEffect)(()=>{
+        const handleOnline = ()=>{
+            setOnlineStatus(true);
+        };
+        const handleOffline = ()=>{
+            setOnlineStatus(false);
+        };
+        window.addEventListener("online", handleOnline);
+        window.addEventListener("offline", handleOffline);
+        // Cleanup
+        return ()=>{
+            window.removeEventListener("online", handleOnline);
+            window.removeEventListener("offline", handleOffline);
+        };
+    }, []);
+    return onlineStatus;
+};
+_s(useOnlineStatus, "qDLN4CKTUyO1Uktrrx41NP8Q2H4=");
+exports.default = useOnlineStatus;
+
+  $parcel$ReactRefreshHelpers$b942.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"7h6Pi":[function(require,module,exports,__globalThis) {
 "use strict";
 var Refresh = require("7422ead32dcc1e6b");
 function debounce(func, delay) {
@@ -27313,47 +27353,7 @@ function $da9882e673ac146b$var$ErrorOverlay() {
     return null;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"4weZe":[function(require,module,exports,__globalThis) {
-var $parcel$ReactRefreshHelpers$b942 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-$parcel$ReactRefreshHelpers$b942.init();
-var prevRefreshReg = globalThis.$RefreshReg$;
-var prevRefreshSig = globalThis.$RefreshSig$;
-$parcel$ReactRefreshHelpers$b942.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _s = $RefreshSig$();
-const useOnlineStatus = ()=>{
-    _s();
-    const [onlineStatus, setOnlineStatus] = (0, _react.useState)(true);
-    (0, _react.useEffect)(()=>{
-        const handleOnline = ()=>{
-            setOnlineStatus(true);
-        };
-        const handleOffline = ()=>{
-            setOnlineStatus(false);
-        };
-        window.addEventListener("online", handleOnline);
-        window.addEventListener("offline", handleOffline);
-        // Cleanup
-        return ()=>{
-            window.removeEventListener("online", handleOnline);
-            window.removeEventListener("offline", handleOffline);
-        };
-    }, []);
-    return onlineStatus;
-};
-_s(useOnlineStatus, "qDLN4CKTUyO1Uktrrx41NP8Q2H4=");
-exports.default = useOnlineStatus;
-
-  $parcel$ReactRefreshHelpers$b942.postlude(module);
-} finally {
-  globalThis.$RefreshReg$ = prevRefreshReg;
-  globalThis.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"jMk1U","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"8IBIN":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"8IBIN":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$3f35 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$3f35.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -27378,33 +27378,45 @@ const BodyComponent = ()=>{
     const [restaurants, setRestaurants] = (0, _react.useState)([]);
     const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
     const [searchText, setSearchText] = (0, _react.useState)("");
+    const [loading, setLoading] = (0, _react.useState)(true);
+    const [error, setError] = (0, _react.useState)(null);
     const onlineStatus = (0, _useOnlineStatusDefault.default)();
-    const filterTopRated = ()=>{
-        const filteredData = restaurants.filter((restaurant)=>restaurant.info.avgRating > 4);
-        setFilteredRestaurants(filteredData);
-    };
     (0, _react.useEffect)(()=>{
         fetchData();
     }, []);
     const fetchData = async ()=>{
         try {
-            const response = await fetch('https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.33880&lng=76.39060&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
+            setLoading(true);
+            setError(null);
+            const swiggyUrl = 'https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.33880&lng=76.39060&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING';
+            const API_KEY = "4277810b";
+            const proxyUrl = `https://corsproxy.io/?key=${API_KEY}&url=${encodeURIComponent(swiggyUrl)}`;
+            // console.log("Proxy URL:", proxyUrl);
+            const response = await fetch(proxyUrl);
+            if (!response.ok) throw new Error(`API Error: ${response.status}`);
             const json = await response.json();
+            console.log("API Response:", json);
             const cards = json?.data?.cards || [];
             const restaurantCard = cards.find((card)=>card?.card?.card?.gridElements?.infoWithStyle?.restaurants);
             const restaurantList = restaurantCard?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
-            console.log('Restaurant List:', restaurantList);
+            console.log("Restaurants:", restaurantList);
             setRestaurants(restaurantList);
             setFilteredRestaurants(restaurantList);
         } catch (error) {
-            console.error('Error fetching restaurants:', error);
+            console.error("Failed to fetch restaurants:", error);
+            setError(error.message);
+        } finally{
+            setLoading(false);
         }
     };
-    if (restaurants.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
-        fileName: "src/Component/BodyComponent.js",
-        lineNumber: 46,
-        columnNumber: 16
-    }, undefined);
+    const filterTopRated = ()=>{
+        const filteredData = restaurants.filter((restaurant)=>restaurant?.info?.avgRating > 4);
+        setFilteredRestaurants(filteredData);
+    };
+    const searchRestaurants = ()=>{
+        const searchData = restaurants.filter((restaurant)=>restaurant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
+        setFilteredRestaurants(searchData);
+    };
     if (!onlineStatus) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "offline-page",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27415,22 +27427,22 @@ const BodyComponent = ()=>{
                     children: "\uD83D\uDCE1"
                 }, void 0, false, {
                     fileName: "src/Component/BodyComponent.js",
-                    lineNumber: 52,
-                    columnNumber: 17
+                    lineNumber: 116,
+                    columnNumber: 21
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                     children: "You're offline"
                 }, void 0, false, {
                     fileName: "src/Component/BodyComponent.js",
-                    lineNumber: 56,
-                    columnNumber: 17
+                    lineNumber: 120,
+                    columnNumber: 21
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    children: "Looks like your internet connection is unavailable. Please check your connection and try again."
+                    children: "Looks like your internet connection is unavailable."
                 }, void 0, false, {
                     fileName: "src/Component/BodyComponent.js",
-                    lineNumber: 58,
-                    columnNumber: 17
+                    lineNumber: 122,
+                    columnNumber: 21
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                     className: "offline-retry-btn",
@@ -27438,19 +27450,55 @@ const BodyComponent = ()=>{
                     children: "Try Again"
                 }, void 0, false, {
                     fileName: "src/Component/BodyComponent.js",
-                    lineNumber: 63,
-                    columnNumber: 17
+                    lineNumber: 127,
+                    columnNumber: 21
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/Component/BodyComponent.js",
-            lineNumber: 51,
-            columnNumber: 13
+            lineNumber: 114,
+            columnNumber: 17
         }, undefined)
     }, void 0, false, {
         fileName: "src/Component/BodyComponent.js",
-        lineNumber: 50,
-        columnNumber: 9
+        lineNumber: 112,
+        columnNumber: 13
+    }, undefined);
+    if (loading) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+        fileName: "src/Component/BodyComponent.js",
+        lineNumber: 141,
+        columnNumber: 16
+    }, undefined);
+    if (error) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "error-page",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "Unable to load restaurants"
+            }, void 0, false, {
+                fileName: "src/Component/BodyComponent.js",
+                lineNumber: 149,
+                columnNumber: 17
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: error
+            }, void 0, false, {
+                fileName: "src/Component/BodyComponent.js",
+                lineNumber: 153,
+                columnNumber: 17
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: fetchData,
+                children: "Try Again"
+            }, void 0, false, {
+                fileName: "src/Component/BodyComponent.js",
+                lineNumber: 157,
+                columnNumber: 17
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Component/BodyComponent.js",
+        lineNumber: 147,
+        columnNumber: 13
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
@@ -27463,73 +27511,66 @@ const BodyComponent = ()=>{
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                                 value: searchText,
-                                onChange: (e)=>{
-                                    setSearchText(e.target.value);
-                                },
+                                onChange: (e)=>setSearchText(e.target.value),
                                 className: "search-box",
                                 type: "text",
                                 placeholder: "Search for restaurants..."
                             }, void 0, false, {
                                 fileName: "src/Component/BodyComponent.js",
-                                lineNumber: 79,
-                                columnNumber: 25
+                                lineNumber: 173,
+                                columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                onClick: ()=>{
-                                    const searchData = restaurants.filter((restaurant)=>restaurant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
-                                    setFilteredRestaurants(searchData);
-                                },
-                                children: "search"
+                                onClick: searchRestaurants,
+                                children: "Search"
                             }, void 0, false, {
                                 fileName: "src/Component/BodyComponent.js",
-                                lineNumber: 82,
-                                columnNumber: 25
+                                lineNumber: 183,
+                                columnNumber: 21
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Component/BodyComponent.js",
-                        lineNumber: 78,
-                        columnNumber: 21
+                        lineNumber: 171,
+                        columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         onClick: filterTopRated,
                         className: "filter-btn",
-                        children: "Top rated Restaurant"
+                        children: "Top Rated Restaurant"
                     }, void 0, false, {
                         fileName: "src/Component/BodyComponent.js",
-                        lineNumber: 87,
-                        columnNumber: 21
+                        lineNumber: 189,
+                        columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Component/BodyComponent.js",
-                lineNumber: 77,
-                columnNumber: 19
+                lineNumber: 169,
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "res-container",
-                children: filteredRestaurants.map((restaurant, index)=>{
-                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
+                children: filteredRestaurants.map((restaurant)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
                         resData: restaurant
                     }, restaurant?.info?.id, false, {
                         fileName: "src/Component/BodyComponent.js",
-                        lineNumber: 94,
-                        columnNumber: 36
-                    }, undefined);
-                })
+                        lineNumber: 202,
+                        columnNumber: 21
+                    }, undefined))
             }, void 0, false, {
                 fileName: "src/Component/BodyComponent.js",
-                lineNumber: 91,
-                columnNumber: 17
+                lineNumber: 198,
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Component/BodyComponent.js",
-        lineNumber: 75,
+        lineNumber: 167,
         columnNumber: 9
     }, undefined);
 };
-_s(BodyComponent, "1enTRHOUOMgYr3H1I9GHN7wX+pM=", false, function() {
+_s(BodyComponent, "zWU1uBdnxUSXbVw9U8wLQqIH7qY=", false, function() {
     return [
         (0, _useOnlineStatusDefault.default)
     ];
@@ -27544,7 +27585,7 @@ $RefreshReg$(_c, "BodyComponent");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","./RestaurantCard":"6tQGs","react":"jMk1U","./Shimmer":"i7d8Y","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","../Utils/useOnlineStatus":"4weZe","../../index.css":"giGSC"}],"6tQGs":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","./RestaurantCard":"6tQGs","react":"jMk1U","../Utils/useOnlineStatus":"4weZe","./Shimmer":"i7d8Y","../../index.css":"giGSC","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"6tQGs":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$fe25 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$fe25.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
