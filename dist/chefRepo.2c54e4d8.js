@@ -17561,35 +17561,80 @@ var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
 var _useOnlineStatus = require("../Utils/useOnlineStatus");
 var _useOnlineStatusDefault = parcelHelpers.interopDefault(_useOnlineStatus);
+var _headerCss = require("../css/header.css");
 var _s = $RefreshSig$();
 const HeaderComponent = ()=>{
     _s();
     const [isLoggedIn, setIsLoggedIn] = (0, _react.useState)(false);
+    const [menuOpen, setMenuOpen] = (0, _react.useState)(false);
     const isOnline = (0, _useOnlineStatusDefault.default)();
     const handleLogin = ()=>{
-        setIsLoggedIn(!isLoggedIn);
+        setIsLoggedIn((prev)=>!prev);
+        setMenuOpen(false);
     };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    const closeMenu = ()=>{
+        setMenuOpen(false);
+    };
+    const toggleMenu = ()=>{
+        setMenuOpen((prev)=>!prev);
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
         className: "header",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "logo-container",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    className: "logo",
-                    src: (0, _constants.LOGO_URL),
-                    alt: "Logo"
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                    to: "/",
+                    onClick: closeMenu,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        className: "logo",
+                        src: (0, _constants.LOGO_URL),
+                        alt: "Chef Logo"
+                    }, void 0, false, {
+                        fileName: "src/Component/HeaderComponent.js",
+                        lineNumber: 32,
+                        columnNumber: 21
+                    }, undefined)
                 }, void 0, false, {
                     fileName: "src/Component/HeaderComponent.js",
-                    lineNumber: 16,
+                    lineNumber: 31,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Component/HeaderComponent.js",
-                lineNumber: 15,
+                lineNumber: 30,
                 columnNumber: 13
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "nav-items",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                type: "button",
+                className: `menu-toggle ${menuOpen ? "active" : ""}`,
+                onClick: toggleMenu,
+                "aria-label": "Toggle navigation",
+                "aria-expanded": menuOpen,
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {}, void 0, false, {
+                        fileName: "src/Component/HeaderComponent.js",
+                        lineNumber: 49,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {}, void 0, false, {
+                        fileName: "src/Component/HeaderComponent.js",
+                        lineNumber: 50,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {}, void 0, false, {
+                        fileName: "src/Component/HeaderComponent.js",
+                        lineNumber: 51,
+                        columnNumber: 17
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Component/HeaderComponent.js",
+                lineNumber: 42,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
+                className: `nav-items ${menuOpen ? "open" : ""}`,
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
@@ -17600,7 +17645,7 @@ const HeaderComponent = ()=>{
                                         className: "status-dot"
                                     }, void 0, false, {
                                         fileName: "src/Component/HeaderComponent.js",
-                                        lineNumber: 22,
+                                        lineNumber: 67,
                                         columnNumber: 29
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -17608,124 +17653,130 @@ const HeaderComponent = ()=>{
                                         children: isOnline ? "Online" : "Offline"
                                     }, void 0, false, {
                                         fileName: "src/Component/HeaderComponent.js",
-                                        lineNumber: 23,
+                                        lineNumber: 69,
                                         columnNumber: 29
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/Component/HeaderComponent.js",
-                                lineNumber: 21,
+                                lineNumber: 62,
                                 columnNumber: 25
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/Component/HeaderComponent.js",
-                            lineNumber: 20,
+                            lineNumber: 61,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                 to: "/",
+                                onClick: closeMenu,
                                 children: "Home"
                             }, void 0, false, {
                                 fileName: "src/Component/HeaderComponent.js",
-                                lineNumber: 29,
+                                lineNumber: 78,
                                 columnNumber: 25
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/Component/HeaderComponent.js",
-                            lineNumber: 28,
+                            lineNumber: 77,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                 to: "/about",
+                                onClick: closeMenu,
                                 children: "About"
                             }, void 0, false, {
                                 fileName: "src/Component/HeaderComponent.js",
-                                lineNumber: 32,
+                                lineNumber: 86,
                                 columnNumber: 25
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/Component/HeaderComponent.js",
-                            lineNumber: 31,
+                            lineNumber: 85,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                 to: "/contact",
+                                onClick: closeMenu,
                                 children: "Contact"
                             }, void 0, false, {
                                 fileName: "src/Component/HeaderComponent.js",
-                                lineNumber: 35,
+                                lineNumber: 94,
                                 columnNumber: 25
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/Component/HeaderComponent.js",
-                            lineNumber: 34,
+                            lineNumber: 93,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                 to: "/grocery",
+                                onClick: closeMenu,
                                 children: "Grocery"
                             }, void 0, false, {
                                 fileName: "src/Component/HeaderComponent.js",
-                                lineNumber: 38,
+                                lineNumber: 102,
                                 columnNumber: 25
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/Component/HeaderComponent.js",
-                            lineNumber: 37,
+                            lineNumber: 101,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                 to: "/cart",
+                                onClick: closeMenu,
                                 children: "Cart"
                             }, void 0, false, {
                                 fileName: "src/Component/HeaderComponent.js",
-                                lineNumber: 41,
+                                lineNumber: 110,
                                 columnNumber: 25
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/Component/HeaderComponent.js",
-                            lineNumber: 40,
+                            lineNumber: 109,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                type: "button",
                                 className: "login-btn",
                                 onClick: handleLogin,
-                                children: isLoggedIn ? 'Logout' : 'Login'
+                                children: isLoggedIn ? "Logout" : "Login"
                             }, void 0, false, {
                                 fileName: "src/Component/HeaderComponent.js",
-                                lineNumber: 44,
+                                lineNumber: 118,
                                 columnNumber: 25
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/Component/HeaderComponent.js",
-                            lineNumber: 43,
+                            lineNumber: 117,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Component/HeaderComponent.js",
-                    lineNumber: 19,
+                    lineNumber: 58,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Component/HeaderComponent.js",
-                lineNumber: 18,
+                lineNumber: 56,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Component/HeaderComponent.js",
-        lineNumber: 14,
+        lineNumber: 27,
         columnNumber: 9
     }, undefined);
 };
-_s(HeaderComponent, "Q1Z2REUsGlo10rd83ybjQnxUZv8=", false, function() {
+_s(HeaderComponent, "jEAo2vEjbxkAg2Y9EpBGg+sSGdo=", false, function() {
     return [
         (0, _useOnlineStatusDefault.default)
     ];
@@ -17740,7 +17791,7 @@ $RefreshReg$(_c, "HeaderComponent");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","../Utils/constants":"jAHEq","react":"jMk1U","react-router-dom":"61z4w","../Utils/useOnlineStatus":"4weZe","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"jAHEq":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","../Utils/constants":"jAHEq","react":"jMk1U","react-router-dom":"61z4w","../Utils/useOnlineStatus":"4weZe","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","../css/header.css":"fEdOe"}],"jAHEq":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "CDN_URL", ()=>CDN_URL);
@@ -27353,7 +27404,7 @@ function $da9882e673ac146b$var$ErrorOverlay() {
     return null;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"8IBIN":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"fEdOe":[function() {},{}],"8IBIN":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$3f35 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$3f35.init();
 var prevRefreshReg = globalThis.$RefreshReg$;

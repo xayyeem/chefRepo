@@ -16,115 +16,12 @@ body {
 
 
 /* =========================
-   HEADER
-========================= */
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 12px 40px;
-
-    background-color: #fff;
-
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-
-/* =========================
-   LOGO
-========================= */
-
-.logo {
-    width: 70px;
-    height: 70px;
-
-    border-radius: 50%;
-    object-fit: cover;
-
-    display: block;
-}
-
-
-/* =========================
-   NAVIGATION
-========================= */
-
-.nav-items ul {
-    display: flex;
-    align-items: center;
-
-    gap: 32px;
-
-    list-style: none;
-}
-
-.nav-items li {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-
-/* React Router Links */
-
-.nav-items a {
-    text-decoration: none;
-    color: #222;
-
-    transition: color 0.2s ease;
-}
-
-.nav-items a:hover {
-    color: #ff5200;
-}
-
-
-/* =========================
-   LOGIN BUTTON
-========================= */
-
-.login-btn {
-    padding: 9px 20px;
-
-    border: none;
-    border-radius: 8px;
-
-    background-color: #ff5200;
-    color: #fff;
-
-    font-size: 15px;
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: all 0.2s ease;
-}
-
-.login-btn:hover {
-    background-color: #e64600;
-
-    transform: translateY(-1px);
-}
-
-.login-btn:active {
-    transform: translateY(0);
-}
-
-
-/* =========================
    BODY
 ========================= */
 
 .body {
     max-width: 1400px;
-
     margin: 0 auto;
-
     padding: 30px 40px;
 }
 
@@ -136,9 +33,7 @@ body {
 .filter {
     display: flex;
     align-items: center;
-
     gap: 16px;
-
     margin-bottom: 30px;
 }
 
@@ -562,14 +457,6 @@ body {
 
 @media (max-width: 800px) {
 
-    .header {
-        padding: 12px 20px;
-    }
-
-    .nav-items ul {
-        gap: 15px;
-    }
-
     .body {
         padding: 25px 20px;
     }
@@ -599,28 +486,6 @@ body {
 ========================= */
 
 @media (max-width: 550px) {
-
-    .header {
-        padding: 10px 15px;
-    }
-
-    .logo {
-        width: 55px;
-        height: 55px;
-    }
-
-    .nav-items ul {
-        gap: 10px;
-    }
-
-    .nav-items li {
-        font-size: 14px;
-    }
-
-    .nav-items li:nth-child(2),
-    .nav-items li:nth-child(3) {
-        display: none;
-    }
 
     .body {
         padding: 20px 15px;
@@ -662,6 +527,7 @@ body {
     }
 }
 
+
 /* =========================
    OFFLINE PAGE
 ========================= */
@@ -702,6 +568,7 @@ body {
     animation: offlineCardAppear 0.4s ease-out;
 }
 
+
 /* =========================
    OFFLINE ICON
 ========================= */
@@ -728,6 +595,7 @@ body {
     animation: offlinePulse 2s infinite;
 }
 
+
 /* =========================
    TITLE
 ========================= */
@@ -740,6 +608,7 @@ body {
     font-size: 32px;
     font-weight: 700;
 }
+
 
 /* =========================
    DESCRIPTION
@@ -755,6 +624,7 @@ body {
     font-size: 15px;
     line-height: 1.6;
 }
+
 
 /* =========================
    RETRY BUTTON
@@ -794,11 +664,13 @@ body {
     transform: translateY(0);
 }
 
+
 /* =========================
    ANIMATIONS
 ========================= */
 
 @keyframes offlineCardAppear {
+
     from {
         opacity: 0;
         transform: translateY(15px);
@@ -811,6 +683,7 @@ body {
 }
 
 @keyframes offlinePulse {
+
     0% {
         transform: scale(1);
     }
@@ -821,130 +694,5 @@ body {
 
     100% {
         transform: scale(1);
-    }
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 550px) {
-
-    .offline-page {
-        min-height: calc(100vh - 75px);
-
-        padding: 25px 15px;
-    }
-
-    .offline-card {
-        padding: 45px 25px;
-
-        border-radius: 16px;
-    }
-
-    .offline-icon {
-        width: 85px;
-        height: 85px;
-
-        font-size: 40px;
-    }
-
-    .offline-card h1 {
-        font-size: 27px;
-    }
-
-    .offline-card p {
-        font-size: 14px;
-    }
-
-    .offline-retry-btn {
-        width: 100%;
-    }
-}
-
-/* =========================
-   CONNECTION STATUS
-========================= */
-
-.connection-status {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-
-    padding: 6px 11px;
-
-    border-radius: 20px;
-
-    font-size: 13px;
-    font-weight: 600;
-
-    transition: all 0.3s ease;
-}
-
-/* Status dot */
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-
-    border-radius: 50%;
-
-    display: inline-block;
-}
-
-/* Online */
-
-.connection-status.online {
-    background-color: #eafaf2;
-    color: #16834d;
-}
-
-.connection-status.online .status-dot {
-    background-color: #20b26b;
-
-    box-shadow: 0 0 0 4px rgba(32, 178, 107, 0.12);
-
-    animation: onlinePulse 2s infinite;
-}
-
-/* Offline */
-
-.connection-status.offline {
-    background-color: #fff1f1;
-    color: #d93025;
-}
-
-.connection-status.offline .status-dot {
-    background-color: #e53935;
-
-    box-shadow: 0 0 0 4px rgba(229, 57, 53, 0.10);
-}
-
-/* Animation */
-
-@keyframes onlinePulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(32, 178, 107, 0.35);
-    }
-
-    70% {
-        box-shadow: 0 0 0 6px rgba(32, 178, 107, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(32, 178, 107, 0);
-    }
-}
-
-@media (max-width: 550px) {
-    .connection-status {
-        padding: 5px 8px;
-        font-size: 11px;
-        gap: 5px;
-    }
-
-    .status-dot {
-        width: 7px;
-        height: 7px;
     }
 }
